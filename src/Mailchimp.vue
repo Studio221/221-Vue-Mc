@@ -1,18 +1,21 @@
 <template>
     <div class="Mailchimp">
         <div class="Mailchimp-message" v-show="message !== null">{{ message }}</div>
-        <form action="#" class="Mailchimp-form" v-on:submit.prevent="submitForm()">
-            <input type="text" class="Mailchimp-input" placeholder="Renseignez votre email">
+        <form :action="url" method="POST" class="Mailchimp-form" novalidate target="_blank" v-on:submit="submitForm">
+            <input name="EMAIL" type="text" class="Mailchimp-input" :placeholder="placeholder" v-model="email">
             <button type="submit" class="Mailchimp-submit"></button>
         </form>
     </div>
 </template>
 
 <script>
+    import axios from 'axios';
+
     export default {
         data () {
             return {
-                message: null
+                message: null,
+                email: null
             };
         },
         props: {
@@ -28,17 +31,20 @@
                 type: String,
                 default: 'Renseignez votre email'
             },
-            id: {
+            url: {
                 type: String,
                 default: ''
-            },
+            }
         },
         mounted() {
 
         },
         methods: {
-            submitForm() {
-                this.message = this.success
+            submitForm(e) {
+                if(this.email.length < 3 || this.email.indexOf('@') === -1){
+                    this.message = this.error
+                    e.preventDefault()
+                }
             }
         }
     }
