@@ -1,5 +1,5 @@
 # WIP do not use
-# 221-vue-mailchimp
+# 221-vue-mc
 
 Mailchimp component for VueJS
 
@@ -7,7 +7,7 @@ Mailchimp component for VueJS
 ## Installation
 
 ```
-npm install 221-vue-mailchimp --save
+npm install 221-vue-mc --save
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ npm install 221-vue-mailchimp --save
 ```
 
 ```
-import Mailchimp from 'vue-web-cam/src/Mailchimp'
+import Mailchimp from '221-vue-mc/src/Mailchimp'
 
 export default {
   components: {
