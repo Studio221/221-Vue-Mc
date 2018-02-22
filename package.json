@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tfarneau/221-vue-mailchimp"
+    "url": "https://github.com/Studio221/221-Vue-Mc"
   },
   "license": "MIT",
   "devDependencies": {
